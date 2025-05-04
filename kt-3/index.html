@@ -4,32 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог товаров</title>
+    <title>Товарный каталог</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f4;
         }
 
-        .catalog {
+        .product-catalog {
             list-style-type: none;
-            padding-left: 10px;
+            padding-left: 15px;
         }
 
-        .item {
+        .product-item {
             cursor: pointer;
-            background-color: #b22222;
-            color: white;
-            padding: 5px;
-            margin: 2px 0;
+            background-color: #c0392b;
+            color: #ffffff;
+            padding: 10px;
+            margin: 3px 0;
             display: flex;
             align-items: center;
+            border-radius: 5px;
         }
 
-        .item span {
-            margin-left: 5px;
+        .product-item span {
+            margin-left: 10px;
         }
 
-        .hidden {
+        .invisible {
             display: none;
         }
     </style>
@@ -38,67 +40,66 @@
 <body>
 
     <h2>Каталог товаров</h2>
-    <ul class="catalog">
+    <ul class="product-catalog">
         <li>
-            <div class="item toggle">[+] <span>Книги</span></div>
-            <ul class="hidden">
+            <div class="product-item toggler">[+] <span>Книги</span></div>
+            <ul class="invisible">
                 <li>
-                    <div class="item toggle">[+] <span>Отечественные</span></div>
-                    <ul class="hidden"></ul>
+                    <div class="product-item toggler">[+] <span>Отечественные</span></div>
+                    <ul class="invisible"></ul>
                 </li>
                 <li>
-                    <div class="item toggle">[+] <span>Зарубежные</span></div>
-                    <ul class="hidden">
+                    <div class="product-item toggler">[+] <span>Зарубежные</span></div>
+                    <ul class="invisible">
                         <li>
-                            <div class="item">Детективы</div>
+                            <div class="product-item">Детективы</div>
                         </li>
                         <li>
-                            <div class="item">Научная фантастика</div>
+                            <div class="product-item">Научная фантастика</div>
                         </li>
                         <li>
-                            <div class="item">Исторические</div>
+                            <div class="product-item">Исторические</div>
                         </li>
                     </ul>
                 </li>
             </ul>
         </li>
         <li>
-            <div class="item toggle">[+] <span>DVD</span></div>
-            <ul class="hidden">
+            <div class="product-item toggler">[+] <span>DVD</span></div>
+            <ul class="invisible">
                 <li>
-                    <div class="item toggle">[+] <span>Отечественные</span></div>
-                    <ul class="hidden">
+                    <div class="product-item toggler">[+] <span>Отечественные</span></div>
+                    <ul class="invisible">
                         <li>
-                            <div class="item">Детективы</div>
+                            <div class="product-item">Детективы</div>
                         </li>
                         <li>
-                            <div class="item">Научная фантастика</div>
+                            <div class="product-item">Научная фантастика</div>
                         </li>
                         <li>
-                            <div class="item">Исторические</div>
+                            <div class="product-item">Исторические</div>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <div class="item toggle">[+] <span>Зарубежные</span></div>
-                    <ul class="hidden"></ul>
+                    <div class="product-item toggler">[+] <span>Зарубежные</span></div>
+                    <ul class="invisible"></ul>
                 </li>
             </ul>
         </li>
     </ul>
 
     <script>
+        document.querySelectorAll(".toggler").forEach(el => {
+            el.addEventListener("click", function () {
+                let sublist = this.nextElementSibling;
 
-        document.querySelectorAll(".toggle").forEach(item => {
-            item.addEventListener("click", function () {
-                let submenu = this.nextElementSibling;
-
-                if (submenu) {
-                    if (submenu.classList.contains("hidden")) {
-                        submenu.classList.remove("hidden");
+                if (sublist) {
+                    if (sublist.classList.contains("invisible")) {
+                        sublist.classList.remove("invisible");
                         this.innerHTML = "[-] " + this.innerHTML.substring(4);
                     } else {
-                        submenu.classList.add("hidden");
+                        sublist.classList.add("invisible");
                         this.innerHTML = "[+] " + this.innerHTML.substring(4);
                     }
                 }
