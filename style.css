@@ -1,0 +1,144 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 40px 20px;
+    background-color: #f0f2f5;
+}
+
+.main-wrapper {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.validation-msg {
+    color: #e74c3c;
+    font-size: 0.85em;
+    height: 18px;
+    display: block;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.card-display {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.institution, .network {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.digits {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.owner {
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.expiration {
+    align-self: flex-end;
+    font-size: 0.9em;
+}
+
+.network {
+    align-self: flex-end;
+}
+
+#records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#records-table caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#records-table th, #records-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#records-table th {
+    background-color: #eaf2f8;
+    font-weight: 600;
+}
+
+#records-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#records-table tr:hover {
+    background-color: #f1f1f1;
+}
